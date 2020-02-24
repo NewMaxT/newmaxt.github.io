@@ -2,9 +2,14 @@
     from { opacity: 0; }
     to   { opacity: 100; }
 }
+
+@keyframes grossisement {
+    from { transform: scale(10%); }
+    to { transform: scale(11%); }
+}
   
 html, body {
-    background-image: url(../Images/1.jpg);
+    background-image: url(../Images/bg2.png);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: top;
@@ -18,11 +23,16 @@ html, body {
 }
 
 .site-logo {
-    font-weight: 900;
-    font-size: 0.8rem;
     color: white;
     text-shadow: black 1px 1px;
     text-decoration: none;
+}
+
+.s-logo {
+    width: 50%;
+    height: 50%;
+    border: 3px groove white;
+    border-radius: 15px;
 }
 
 header {
@@ -37,7 +47,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2em 3em;
+    padding: 1em 3em;
     transition: background 250ms ease-in;
     background: var(--background);
     color: var(--text);
@@ -51,7 +61,7 @@ header {
 }
   
 .head__link {
-    --spacing: 1em;
+    --spacing: 2em;
     text-decoration: none;
     color: inherit;
     display: inline-block;
@@ -88,7 +98,7 @@ header {
     margin-left: 1em;
     transition: background 225ms ease-in-out;
     letter-spacing: 1px;
-    padding: 0.75em 1.5em;
+    padding: 0.5em 1.2em;
 }
 
 
@@ -103,8 +113,8 @@ header {
 }
   
 .ul--btn--highlight {
-    background: limegreen;
-    border-color: limegreen;
+    background: #00ddff;
+    border-color: #00ddff;
     color: #333;
 }
   
@@ -122,7 +132,7 @@ header {
   
 .header_img {
     padding: 50vh 0;
-    background: #223 url(../Images/2.jpg);
+    background: rgb(43, 43, 54) url(../Images/2.jpg);
     background-size: cover;
     background-blend-mode: multiply;
     color: white;
@@ -134,34 +144,91 @@ header {
     padding-bottom: 1em;
 }
 
-.home-about {
-    padding: 4em 1em;
+.section2 {
+    box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.5), 0 0 20px 0 rgb(255, 255, 255);
+    font-family: 'Quicksand';
+    padding: 5em 7em;
     max-width: 900px;
     margin: 0 auto;
-    background-color:rgba(0, 0, 0, 0.5);
+    background-color:rgba(0, 0, 0, 0.7);
     background-blend-mode: multiply;
     color: white;
     text-align: center;
+    border: 3px solid #f4f4f4;
 }
 
-img {
-    width: 368;
-    height: 368;
-    border: 4px groove white;
-    border-radius: 10px;
+.sous_section2 {
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5), 0 0 10px 0 rgba(255, 255, 255, 0.59);
+    font-family: 'Quicksand';
+    padding: 1em 1em;
+    max-width: 1500px;
+    margin: 015px auto;
+    background-color:rgba(0, 0, 0, 0);
+    background-blend-mode: multiply;
+    color: white;
+    text-align: center;
+    border: 1px solid #f4f4f4;
 }
 
-img:hover {
-    width: 368;
-    height: 368;
-    border: 4px groove white;
-    border-radius: 10px;
+h3.section2_t {
+    font-size: 1.7em;
+    display: inline-block;
+}
+
+p.section2_t {
+    font-size: 1.5em;
+}
+
+.paddingright {
+    padding-right: 20px;
+}
+
+.paddingleft {
+    padding-left: 20px;
+}
+
+.paddingtwice {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+img.header_logo {
+    width: 10%;
+    height: 10%;
+    border-radius: 15px;
+}
+
+div.header_bck_div {
+    width: 100%;
+    height: 100px;
 }
 
 .columns {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display: flex;
 }
   
 .col + .col {
     margin-left: 1.5em;
+    margin-right: 1.5em;
+}
+
+.header_txt {
+    font-family: 'Lacquer';
+    text-align: center;
+    font-size: 4em;
+}
+
+.header_p {
+    font-family: 'Lacquer';
+    text-align: center;
+    font-size: 1.5em;
+}
+
+footer {
+    display: block;
+    background-color: rgb(0, 0, 0, 0.7);
+    margin: 0 auto;
+    width: 100%;
+    padding: 3px 0;
 }

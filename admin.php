@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+
+if(!isset(&_SESSION['admin']) OR !&_SESSION['admin']) {
+    header('Location: ../index.php')
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <! -- WaW t tro 1 hackeur -->
@@ -5,7 +15,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Boutique - NewMax</title>
+    <title>Administration - NewMax</title>
     <link rel="stylesheet" type="text/css" href="CSS/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Lacquer|Trade+Winds&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Quicksand&display=swap" rel="stylesheet">
@@ -52,7 +62,7 @@
         <p class="header_p">Dirigeant de l'association 7D et créateur indépendant</p>
       </div>
      </section>
-     
+
       <footer class="footer">
         <h4 style="color: white; text-align: center;">Housemade &copy; NewMax</h4>
       </footer>

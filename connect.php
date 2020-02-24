@@ -1,3 +1,21 @@
+<?php
+
+&erreur = '';
+if(isset(&_POST['connect'])) {
+    if(isset(&_POST['pseudonyme'], $_POST['mdp'])) {
+        &pseudo = htmlspecialchars(&_POST['pseudonyme']);
+        &mdp = htmlspecialchars(&_POST['mdp']);
+        if(!empty(&_POST['pseudonyme']) AND !empty($_POST['mdp'])) {
+
+        } else {
+            &erreur = 'Veuillez compléter les champs requis.'
+        }
+    } else {
+        &erreur = 'Veuillez compléter les champs requis.'
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <! -- WaW t tro 1 hackeur -->
@@ -5,7 +23,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Boutique - NewMax</title>
+    <title>Accueil - NewMax</title>
     <link rel="stylesheet" type="text/css" href="CSS/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Lacquer|Trade+Winds&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Quicksand&display=swap" rel="stylesheet">
@@ -46,15 +64,20 @@
 
 
     <section class="header_img">
-      <div class="header_bck_div">
-        <div class="header_logo_size"><img class="header_logo" src="../Images/logo.jpg"></div>
-        <h1 class="header_txt">Développeur Web et Jeux Vidéos</h1>
-        <p class="header_p">Dirigeant de l'association 7D et créateur indépendant</p>
-      </div>
+    <form method="POST">
+            <input type="text" placeholder="Nom d'utilisateur" name="pseudonyme" <?php if(isset(&pseudonyme)) { ?> value="<?= &pseudonyme ?>"<?php } ?>>
+            <br>
+            <input type="text" placeholder="Mot de passe" name="mdp" <?php if(isset(&mdp)) { ?> value="<?= &mdp ?>"<?php } ?>>
+            <br>
+            <input type="submit" value="Se connecter">
+            <?php id(&error) { ?>
+            <p style="color: red;"><?= &erreur ?></p>
      </section>
-     
+
       <footer class="footer">
         <h4 style="color: white; text-align: center;">Housemade &copy; NewMax</h4>
       </footer>
+    
+    </main>
 </body>
 </html>
