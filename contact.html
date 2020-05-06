@@ -1,21 +1,3 @@
-<?php
-
-&erreur = '';
-if(isset(&_POST['connect'])) {
-    if(isset(&_POST['pseudonyme'], $_POST['mdp'])) {
-        &pseudo = htmlspecialchars(&_POST['pseudonyme']);
-        &mdp = htmlspecialchars(&_POST['mdp']);
-        if(!empty(&_POST['pseudonyme']) AND !empty($_POST['mdp'])) {
-
-        } else {
-            &erreur = 'Veuillez compléter les champs requis.'
-        }
-    } else {
-        &erreur = 'Veuillez compléter les champs requis.'
-    }
-}
-
-?>
 <!DOCTYPE html>
 <html>
 <! -- WaW t tro 1 hackeur -->
@@ -23,7 +5,7 @@ if(isset(&_POST['connect'])) {
 
 <head>
     <meta charset="UTF-8">
-    <title>Accueil - NewMax</title>
+    <title>Contact - NewMax</title>
     <link rel="stylesheet" type="text/css" href="CSS/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Lacquer|Trade+Winds&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Quicksand&display=swap" rel="stylesheet">
@@ -64,20 +46,61 @@ if(isset(&_POST['connect'])) {
 
 
     <section class="header_img">
-    <form method="POST">
-            <input type="text" placeholder="Nom d'utilisateur" name="pseudonyme" <?php if(isset(&pseudonyme)) { ?> value="<?= &pseudonyme ?>"<?php } ?>>
-            <br>
-            <input type="text" placeholder="Mot de passe" name="mdp" <?php if(isset(&mdp)) { ?> value="<?= &mdp ?>"<?php } ?>>
-            <br>
-            <input type="submit" value="Se connecter">
-            <?php id(&error) { ?>
-            <p style="color: red;"><?= &erreur ?></p>
+      <div class="header_bck_div">
+        <div class="header_logo_size"><img class="header_logo" src="../Images/logo.jpg"></div>
+        <h1 class="header_txt">Développeur Web et Jeux Vidéos</h1>
+        <p class="header_p">Dirigeant de l'association 7D et créateur indépendant</p>
+      </div>
      </section>
+
+
+     <div class="space"></div>
+
+
+
+
+
+      <div class="section2">
+
+        <img style="width: 15%; height: 15%;" src="../Images/logo7d.png" alt="Logo_Organisation">
+
+        <p class="section2_t">Formulaire de contact - <a style="color: rgba(255, 202, 110)" href="https://7down.fr" onclick="window.open(this.href); return false;">7D</a></p>
+
+        <div class="columns">
+
+        	<div class="container">
+  			<form action="action_page.php">
+
+   			 <label for="fname">Prénom/Nom</label>
+  			  <input type="text" id="fname" name="firstname" placeholder="Votre nom..">
+
+		     <label for="lname">Adresse E-Mail</label>
+     		  <input type="email" id="lname" name="lastname" placeholder="Votre adresse..">
+
+    <label for="country">Pays</label>
+    <select id="country" name="country">
+      <option value="australia">France</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+
+    <label for="subject">Corps du message</label>
+    <textarea id="subject" name="subject" placeholder="Votre message.." style="height:200px"></textarea>
+
+    <input type="submit" value="Envoyer">
+
+  </form>
+</div>
+          
+
+        </div>
+      </div>
+
+      <div class="space"></div>
+      <div class="space"></div>
 
       <footer class="footer">
         <h4 style="color: white; text-align: center;">Housemade &copy; NewMax</h4>
       </footer>
-    
-    </main>
 </body>
 </html>
